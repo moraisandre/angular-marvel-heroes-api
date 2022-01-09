@@ -1,6 +1,10 @@
 # Angular Marvel Heroes API
 
-An Angular app that uses the <a href="https://developer.marvel.com/docs">Marvel's API</a> to search your favorite Hero
+An Angular app that uses the <a href="https://developer.marvel.com/docs">Marvel's API</a> to search your favorite Hero.
+
+Check live demo here:
+
+https://moraisandre.github.io/angular-marvel-heroes-api
 
 ## Idea
 
