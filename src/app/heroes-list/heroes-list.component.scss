@@ -1,0 +1,22 @@
+.hero-card {
+    width: 300px;
+    margin: 10px;
+    float: left;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-action {
+    margin-top: auto;
+}
+
+.no-content {
+    width: 300px;
+    margin: 10px;
+    float: left;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+}

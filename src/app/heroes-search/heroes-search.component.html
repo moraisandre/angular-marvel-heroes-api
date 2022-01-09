@@ -1,0 +1,21 @@
+<h1>Marvel Heroes API</h1>
+
+<p>Search your favorite characters using <a href="https://developer.marvel.com/docs">Marvel's API</a>:</p>
+
+<mat-form-field class="example-form-field" color="accent">
+  <mat-label>Character</mat-label>
+  <input matInput type="text" placeholder="Character name" [(ngModel)]="characterName" (keyup.enter)="search()">
+  <button *ngIf="characterName" matSuffix mat-icon-button aria-label="Clear" (click)="characterName=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="search()" [disabled]="!characterName">Search</button>
+
+<div class="wrapper" *ngIf="loading">
+  <mat-spinner class="loader" diameter="50"></mat-spinner>
+</div>
+
+<ng-container *ngIf="!loading">
+  <app-heroes-list [characters]="charactersArray"></app-heroes-list>
+</ng-container>

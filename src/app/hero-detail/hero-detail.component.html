@@ -1,0 +1,35 @@
+
+<button mat-stroked-button color="accent" (click)="back()">Back</button>
+
+<div *ngIf="character">
+    <h1>{{character.name}}</h1>
+
+    <img src="{{character.thumbnail.path}}.jpg" alt="{{character.name}} image">
+
+    <h3>Description</h3>
+    <mat-divider></mat-divider>
+    <p> {{character.description || 'No description available'}} </p>
+
+    <h3>Comics</h3>
+    <mat-divider></mat-divider>
+
+    <div *ngIf="comics.length > 0; else noComics">
+        <div *ngFor="let comic of comics">
+            <div class="comic-list">
+                <img
+                    mat-card-image
+                    src="{{comic.thumbnail.path}}.jpg"
+                    alt="{{comic.title}} image"
+                    matTooltip={{comic.title}}
+                    matTooltipPosition="above"
+                    matTooltipClass="tooltip-comic">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #noComics>
+   <p>No comics found for {{character.name}}</p>
+</ng-template>
+

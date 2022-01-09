@@ -1,0 +1,20 @@
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a { 
+    color: #69f0ae;
+}
+a:visited {
+    color: #59b98a;
+}
+
+.container {
+    height: 100%;
+    padding: 20px;
+}
+
+button.mat-raised-button {
+    margin: 0 20px !important;
+}

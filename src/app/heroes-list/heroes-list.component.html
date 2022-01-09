@@ -1,0 +1,28 @@
+<ng-container *ngIf="characters.length > 0; else notFound">
+    <div *ngFor="let char of characters">
+        <mat-card class="hero-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{cropText(char.name, 20)}}</mat-card-title>
+              <mat-card-subtitle>Appears in {{char.comics.available}} comics</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{char.thumbnail.path}}.jpg" alt="{{char.name}} image">
+            <mat-card-content>
+              <p>
+                {{cropText(char.description || 'No description available')}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions class="card-action">
+              <button mat-button [routerLink]="['/hero-detail', char.id]">SEE MORE</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</ng-container>
+
+<ng-template #notFound>
+  <div>
+    <div class="no-content">
+      No characters found. 
+    </div>
+  </div>
+</ng-template>

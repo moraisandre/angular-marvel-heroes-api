@@ -1,0 +1,35 @@
+div {
+  margin-top: 10px;
+}
+
+img {
+  max-width: 300px;
+}
+
+p {
+  padding: 20px;
+}
+
+.comic-list {
+
+  width: 150px;
+  // margin: 10px;
+  float: left;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comic-list img {
+  max-width: 120px;
+  margin: 10px;
+}
+
+.mat-card-title {
+  font-size: 10px;
+}
+
+.tooltip-comic {
+  font-size: 17px;
+  background: #272727;
+}
