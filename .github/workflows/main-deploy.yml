@@ -32,19 +32,12 @@ jobs:
         pvtkey: ${{ secrets.PVTKEY }}
         urlbase: ${{ secrets.URLBASE }}
         
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    - name: Building and Deploying...
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1 
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: ng build --prod --base-href "https://moraisandre.github.io/angular-marvel-heroes-api/"
-
-        
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v2.5.0
-      with:
-        build_dir: dist/angular-marvel-heroes-api
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github_access_token: ${{ secrets.GITHUB_TOKEN }} 
+        build_configuration: production 
+        base_href: /angular-marvel-heroes-api/  
+        deploy_branch: gh-pages 
+        angular_dist_build_folder: dist/angular-marvel-heroes-api
   
